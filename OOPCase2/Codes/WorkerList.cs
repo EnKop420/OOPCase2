@@ -22,11 +22,24 @@ namespace OOPCase2.Codes
         {
             workerLists = new();
         }
-
-
         public void AddCustomer(WorkerList list)
         {
             workerLists.Add(list);
         }
+        //public Worker GetWorker(EnumCarType carType)
+        //{
+        //    if (carType == EnumCarType.bil)
+        //    {
+        //        return ;
+        //    }
+        //    else if(carType == EnumCarType.motorcykel)
+        //    {
+
+        //    }
+        //    else if(carType == EnumCarType.lastbil)
+        //    {
+
+        //    }
+        //}
     }
 }

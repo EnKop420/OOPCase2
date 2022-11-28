@@ -8,8 +8,8 @@ namespace OOPCase2.Codes
 {
     internal enum EnumWorkType
     {
-        bilMekaniker,
-        motorcykelMekaniker,
-        lastbilMekaniker
+        bilMekaniker = 1,
+        motorcykelMekaniker = 2,
+        lastbilMekaniker = 3
     }
 }
