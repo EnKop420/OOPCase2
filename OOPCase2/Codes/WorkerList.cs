@@ -13,19 +13,20 @@ namespace OOPCase2.Codes
         public Customer Customers { get; set; }
         public List<WorkerList> workerLists { get; set; }
 
-        public WorkerList(Worker worker, Customer customer)
+        public WorkerList(Customer customer, Worker worker)
         {
-            Workers = worker;
             Customers = customer;
+            Workers = worker;
         }
         public WorkerList()
         {
-
+            workerLists = new();
         }
 
 
-        public void AddCustomer(string FirstName, string LastName, int tlfNummer, )
+        public void AddCustomer(WorkerList list)
         {
+            workerLists.Add(list);
         }
     }
 }

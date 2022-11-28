@@ -8,8 +8,8 @@ namespace OOPCase2.Codes
 {
     internal enum EnumCarType
     {
-        bil,
-        motorcykel,
-        lastbil
+        bil = EnumWorkType.bilMekaniker,
+        motorcykel = EnumWorkType.motorcykelMekaniker,
+        lastbil = EnumWorkType.lastbilMekaniker
     }
 }

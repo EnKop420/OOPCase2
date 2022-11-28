@@ -14,8 +14,5 @@ namespace OOPCase2.Codes
             EnumWorkType = workType;
         }
 
-        public Worker martin = new("Martin", "Jensen", 11111111, EnumWorkType.bilMekaniker);
-        public Worker thomas = new("Thomas", "Hansen", 22222222, EnumWorkType.motorcykelMekaniker);
-        public Worker henrik = new("Henrik", "Nielsen", 33333333, EnumWorkType.lastbilMekaniker);
     }
 }

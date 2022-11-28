@@ -14,6 +14,22 @@ namespace OOPCase2.Codes
         {
             Car = cars;
         }
+        public EnumCarType? getCarType(string Input)
+        {
+            if (Input == EnumCarType.bil.ToString().ToLower())
+            {
+                return EnumCarType.bil;
+            }
+            else if (Input == EnumCarType.motorcykel.ToString().ToLower())
+            {
+                return EnumCarType.motorcykel;
+            }
+            else if(Input == EnumCarType.lastbil.ToString().ToLower())
+            {
+                return EnumCarType.lastbil;
+            }
 
+            return null;
+        }
     }
 }
