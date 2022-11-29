@@ -9,8 +9,8 @@ namespace OOPCase2.Codes
     internal class Customer : Person
     {
 
-        public Car Car { get; set; }
-        public Customer(string firstName, string lastName, int tlfNummer, Car cars) : base(firstName, lastName, tlfNummer)
+        public Vehicle Car { get; set; }
+        public Customer(string firstName, string lastName, int tlfNummer, Vehicle cars) : base(firstName, lastName, tlfNummer)
         {
             Car = cars;
         }

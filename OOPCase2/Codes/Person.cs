@@ -19,6 +19,10 @@ namespace OOPCase2.Codes
             LastName = lastName;
             TlfNummer = tlfNummer;
         }
+        public Person()
+        {
+
+        }
     }
 
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOPCase2.Codes
 {
-    internal enum EnumCarType
+    internal enum EnumMechanicType
     {
-        bil = 1,
-        motorcykel = 2,
-        lastbil = 3
+        bilMekaniker = 1,
+        motorcykelMekaniker = 2,
+        lastbilMekaniker = 3
     }
 }
