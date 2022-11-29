@@ -23,6 +23,8 @@ namespace OOPCase2.Codes
         {
 
         }
+        //public abstract List<string?> Search(Enrollment enrollments);
+        
     }
 
 }

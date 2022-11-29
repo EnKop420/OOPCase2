@@ -9,23 +9,19 @@ namespace OOPCase2.Codes
 {
     internal class ServiceList
     {
-        public Mechanic Mechanics { get; set; }
-        public Customer Customers { get; set; }
+        public VehicleInfo Vehicle { get; set; }
+        public CustomerInfo Customers { get; set; }
         public List<ServiceList> Service { get; set; }
 
-        public ServiceList(Customer customer, Mechanic mechanic)
+        public ServiceList(CustomerInfo customer, VehicleInfo vehicles)
         {
             Customers = customer;
-            Mechanics = mechanic;
+            Vehicle = vehicles;
         }
         public ServiceList()
         {
             Service = new();
-            Mechanics = new();
-        }
-        public void AddCustomer(ServiceList list)
-        {
-            Service.Add(list);
+            Vehicle = new();
         }
     }
 }

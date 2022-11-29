@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace OOPCase2.Codes
 {
-    internal class Customer : Person
+    internal class CustomerInfo : Person
     {
-
-        public Vehicle Car { get; set; }
-        public Customer(string firstName, string lastName, int tlfNummer, Vehicle cars) : base(firstName, lastName, tlfNummer)
+        public CustomerInfo(string firstName, string lastName, int tlfNummer) : base(firstName, lastName, tlfNummer)
         {
-            Car = cars;
+
         }
     }
 }
