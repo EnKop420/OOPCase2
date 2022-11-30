@@ -1,12 +1,10 @@
 ﻿using OOPCase2.Codes;
+using System.Reflection.Metadata.Ecma335;
+using System.Text;
 
 ServiceList list = new();
 VehicleInfo vehicle = new();
 list.Service = new();
-MechanicInfo martin = new("Martin", "Jensen", 11111111, EnumMechanicType.bilMekaniker);
-MechanicInfo thomas = new("Thomas", "Hansen", 22222222, EnumMechanicType.motorcykelMekaniker);
-MechanicInfo henrik = new("Henrik", "Nielsen", 33333333, EnumMechanicType.lastbilMekaniker);
-MechanicInfo mechanic = new();
 string firstname;
 string lastname;
 while (true)
@@ -17,16 +15,48 @@ while (true)
         int userChoice = Convert.ToInt32(Console.ReadLine());
         if (userChoice == 1)
         {
-
+            Console.Clear();
+            Console.WriteLine("Angiv kunden fornavn og efternavn");
+            string[] fullName = Console.ReadLine().Split(" ");
+            firstname = fullName[0];
+            lastname = fullName.Last();
+            int? tlfnr = null;
+            CustomerInfo customer = new(firstname, lastname, tlfnr);
+            List<string> CustomerList = customer.Search(list.Service);
+            if (CustomerList.Count == 0)
+            {
+                throw new Exception("Der er ikke nogen kunder i systemet endnu");
+            }
+            foreach (var item in CustomerList)
+            {
+                Console.WriteLine(item);
+            }
         }
         else if (userChoice == 2)
         {
-
+            Console.Clear();
+            Console.WriteLine("Angiv mekanikeren fornavn og efternavn");
+            string[] fullName = Console.ReadLine().Split(" ");
+            firstname = fullName[0];
+            lastname = fullName.Last();
+            int tlfnr = 0;
+            EnumMechanicType mec1;
+            mec1 = 0;
+            MechanicInfo mechanicSearch = new(firstname, lastname, tlfnr, mec1);
+            List<string> mechanicList = mechanicSearch.Search(list.Service);
+            if (mechanicList.Count == 0)
+            {
+                throw new Exception("Der er ikke nogen mekaniker som arbejder på noget");
+            }
+            foreach (var item in mechanicSearch.Search(list.Service))
+            {
+                Console.WriteLine(item);
+            }
         }
-        if (userChoice == 3)
+        else if (userChoice == 3)
         {
             Console.Clear();
-            Console.WriteLine("Angiv dit fornavn og efternavn");
+            Console.WriteLine("Angiv kunden fornavn og efternavn");
             string[] fullName = Console.ReadLine().Split(" ");
             firstname = fullName[0];
             lastname = fullName.Last();
@@ -85,19 +115,19 @@ while (true)
                 System.Threading.Thread.Sleep(1000);
                 Console.Clear();
             }
-            else if(closeApp == "y")
+            else if (closeApp == "y")
             {
                 Console.WriteLine("Programmet lukker nu");
                 System.Threading.Thread.Sleep(1000);
                 break;
             }
         }
-        throw new Exception("Ugyldigt valg");
+        //throw new Exception("Ugyldigt valg");
     }
     catch (Exception ex)
     {
         Console.WriteLine(ex.Message);
-        Console.WriteLine("Tryk for at starte forfra!");
+        Console.WriteLine("Tryk for at gå tilbage!");
         Console.ReadKey();
         Console.Clear();
     }

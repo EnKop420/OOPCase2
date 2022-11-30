@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace OOPCase2.Codes
 {
-    internal class Person
+    internal abstract class Person
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public int TlfNummer { get; set; }
-        public string Nummerplade { get; set; }
+        public int? TlfNummer { get; set; }
+        //public string Nummerplade { get; set; }
 
-        public Person (string? firstName, string? lastName, int tlfNummer)
+        public abstract List<string?> Search(List<ServiceList> enrollments);
+        public Person(string? firstName, string? lastName, int? tlfNummer)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -23,8 +24,8 @@ namespace OOPCase2.Codes
         {
 
         }
-        //public abstract List<string?> Search(Enrollment enrollments);
-        
+
+
     }
 
 }
