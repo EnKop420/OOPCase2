@@ -25,7 +25,7 @@ while (true)
             List<string> CustomerList = customer.Search(list.Service);
             if (CustomerList.Count == 0)
             {
-                throw new Exception("Der er ikke nogen kunder i systemet endnu");
+                throw new Exception("Kunden er ikke i systemet endnu");
             }
             foreach (var item in CustomerList)
             {
@@ -68,6 +68,7 @@ while (true)
                 throw new Exception("Telefon nummeret er ikke gyldigt! Prøv igen.");
             }
             Console.WriteLine("Angiv hvilken køretøjstype du vil tilføje");
+            Console.WriteLine($"{EnumVehicleType.bil.ToString()}\n{EnumVehicleType.motorcykel.ToString()}\n{EnumVehicleType.lastbil.ToString()}");
             string vehicleTypeSearch = Console.ReadLine();
             EnumVehicleType? vehicleType = vehicle.getVehicleType(vehicleTypeSearch.ToLower());
             if (vehicleType == null)
@@ -85,7 +86,7 @@ while (true)
             string vehicleBrand = Console.ReadLine();
             Console.WriteLine("Angiv bilens model");
             string vehicleModel = Console.ReadLine();
-            Console.WriteLine("Angiv bilens årgang");
+            Console.WriteLine("Angiv bilens årgang (MM-DD-YYYY)");
             string vehicleYearInString = Console.ReadLine();
             DateOnly vehicleYear;
             if (!DateOnly.TryParse(vehicleYearInString, out vehicleYear))

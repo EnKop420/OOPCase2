@@ -27,9 +27,9 @@ namespace OOPCase2.Codes
                 {
                     if (!addOnce)
                     {
-                    result.Add($"{item.Vehicle.Mechanic.EnumMechanicType.ToString().ToUpper()}: {item.Vehicle.Mechanic.FirstName} {item.Vehicle.Mechanic.LastName}\n---------------\nKunder: {item.Customers.FirstName} {item.Customers.LastName}");
+                    result.Add($"{item.Vehicle.Mechanic.EnumMechanicType.ToString().ToUpper()}: {item.Vehicle.Mechanic.FirstName} {item.Vehicle.Mechanic.LastName}");
                     }
-                    result.Add($"Mærke: {item.Vehicle.VehicleBrand.ToString().ToUpper()}\nModel: {item.Vehicle.VehicleModel.ToString().ToUpper()}\nNummerplade: {item.Vehicle.VehiclePlate.ToString().ToUpper()}\nRegistrerings Aårgang: {item.Vehicle.VehicleYear.ToString()}\nEjerens Telefonnummer: {item.Customers.TlfNummer.ToString()}\n----------");
+                    result.Add($"Kunde: {item.Customers.FirstName} {item.Customers.LastName}\n------------\nMærke: {item.Vehicle.VehicleBrand.ToString().ToUpper()}\nModel: {item.Vehicle.VehicleModel.ToString().ToUpper()}\nNummerplade: {item.Vehicle.VehiclePlate.ToString().ToUpper()}\nRegistrerings årgang: {item.Vehicle.VehicleYear.ToString()}\nEjerens Telefonnummer: {item.Customers.TlfNummer.ToString()}\n----------");
                     addOnce = true;
 
                 }

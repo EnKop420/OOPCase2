@@ -23,17 +23,17 @@ namespace OOPCase2.Codes
 
             foreach (var item in SearchCustomer)
             {
-                if (addonce)
+                if (!addonce)
                 {
                     if (item.Customers.FirstName.ToLower() == FirstName && item.Customers.LastName.ToLower() == LastName)
                     {
-                        result.Add($"{item.Vehicle.Mechanic.EnumMechanicType.ToString().ToUpper()}: {item.Vehicle.Mechanic.FirstName} {item.Vehicle.Mechanic.LastName}\n Mekanikeren arbejder på:");
+                        result.Add($"{item.Vehicle.Mechanic.EnumMechanicType.ToString().ToUpper()}: {item.Vehicle.Mechanic.FirstName} {item.Vehicle.Mechanic.LastName}\nMekanikeren arbejder på:\n-------------");
                         addonce = true;
                     }
                 }
                 if (item.Vehicle.Mechanic.FirstName == item.Vehicle.Mechanic.FirstName && item.Vehicle.Mechanic.LastName == item.Vehicle.Mechanic.LastName)
                 {
-                    result.Add($"Mærke: {item.Vehicle.VehicleBrand.ToString().ToUpper()}\nModel: {item.Vehicle.VehicleModel.ToString().ToUpper()}\nNummerplade: {item.Vehicle.VehiclePlate.ToString().ToUpper()}\nRegistrerings Aårgang: {item.Vehicle.VehicleYear.ToString()}\n-------------------");
+                    result.Add($"Mærke: {item.Vehicle.VehicleBrand.ToString().ToUpper()}\nModel: {item.Vehicle.VehicleModel.ToString().ToUpper()}\nNummerplade: {item.Vehicle.VehiclePlate.ToString().ToUpper()}\nRegistrerings årgang: {item.Vehicle.VehicleYear.ToString()}\n-------------------");
                 }
 
             }
