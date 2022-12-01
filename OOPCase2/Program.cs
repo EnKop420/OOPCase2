@@ -12,14 +12,20 @@ while (true)
     try
     {
         Console.WriteLine("Velkommen til værkstedet\n1. For at søge efter en kunde\n2. for at søge efter en mekaniker\n3. For at oprette en ny kunde");
-        int userChoice = Convert.ToInt32(Console.ReadLine());
-        if (userChoice == 1)
+        string userChoice = Console.ReadLine();
+        if (userChoice == "1")
         {
             Console.Clear();
             Console.WriteLine("Angiv kunden fornavn og efternavn");
-            string[] fullName = Console.ReadLine().Split(" ");
-            firstname = fullName[0];
-            lastname = fullName.Last();
+            string fullName = Console.ReadLine();
+            if (string.IsNullOrEmpty(fullName))
+            {
+                throw new Exception("Du har ikke skrevet noget!");
+            }
+            string[] names = fullName.Split(" ");
+            firstname = names[0];
+            lastname = names.Last();
+
             int? tlfnr = null;
             CustomerInfo customer = new(firstname, lastname, tlfnr);
             List<string> CustomerList = customer.Search(list.Service);
@@ -32,13 +38,19 @@ while (true)
                 Console.WriteLine(item);
             }
         }
-        else if (userChoice == 2)
+        else if (userChoice == "2")
         {
             Console.Clear();
             Console.WriteLine("Angiv mekanikeren fornavn og efternavn");
-            string[] fullName = Console.ReadLine().Split(" ");
-            firstname = fullName[0];
-            lastname = fullName.Last();
+            string fullName = Console.ReadLine();
+            if (string.IsNullOrEmpty(fullName))
+            {
+                throw new Exception("Du har ikke skrevet noget!");
+            }
+            string[] names = fullName.Split(" ");
+            firstname = names[0];
+            lastname = names.Last();
+
             int tlfnr = 0;
             EnumMechanicType mec1;
             mec1 = 0;
@@ -53,16 +65,27 @@ while (true)
                 Console.WriteLine(item);
             }
         }
-        else if (userChoice == 3)
+        else if (userChoice == "3")
         {
             Console.Clear();
             Console.WriteLine("Angiv kunden fornavn og efternavn");
-            string[] fullName = Console.ReadLine().Split(" ");
-            firstname = fullName[0];
-            lastname = fullName.Last();
+            string fullName = Console.ReadLine();
+            if (string.IsNullOrEmpty(fullName))
+            {
+                throw new Exception("Du har ikke skrevet noget!");
+            }
+            string[] names = fullName.Split(" ");
+            firstname = names[0];
+            lastname = names.Last();
 
             Console.WriteLine("Angiv dit tlf nummer (skal være 8 cifre lang)");
-            int tlfnr = Convert.ToInt32(Console.ReadLine());
+            string tlf = Console.ReadLine();
+            int tlfnr;
+            if (!int.TryParse(tlf, out tlfnr))
+            {
+                throw new Exception("Det skal være et nummer!");
+            }
+            tlfnr = Convert.ToInt32(tlf);
             if (tlfnr.ToString().Length != 8)
             {
                 throw new Exception("Telefon nummeret er ikke gyldigt! Prøv igen.");
